@@ -32,6 +32,9 @@ source = {}, // particle fountain source
 t = 0,
 req_id = null;
 
+var picPath = 'guy-pics/';
+var guyPics = ['guy-1.png', 'guy-2.jpeg'];
+
 
 function initPage() {
      c = document.querySelector('.c');
@@ -165,31 +168,13 @@ function rand(max, min, _int) {
 
 //create some confetti
 function loadConfetti() {
+    var pic;
 
-    var guy_1 = new Image();
-    guy_1.src = "guy-png.png";
-    confettis.push(guy_1);
-    
-
-
-    
-/*	
-	confetti_orange = new Image;
-	// confetti_orange.src = ENTER PATH TO SOURCE IMAGE
-	confettis.push(confetti_orange);
-	
-	
-	// add more images if i want.
-	confetti_blue = new Image;
-	//confetti_blue.src = 
-	confettis.push(confetti_blue);
-	
-	confetti_purple = new Image;
-	//confetti_purple.src = 
-	confettis.push(confetti_purple);
-	*/
-
-    // and i can add the rest later.
+    for (pic in guyPics){
+	var guy = new Image();
+	guy.src = picPath + guyPics[pic];
+	confettis.push(guy);
+    }
 };
 
 
@@ -240,8 +225,14 @@ function drawOnCanvas() {
 
 function wtf() {
 
-    var x = document.getElementById("testObject");
-    x.innerHTML = "Yo!";
+    var pic;
+
+    for (pic in guyPics){
+	alert(guyPics[pic]);
+    }
+
+    //var x = document.getElementById("testObject");
+    //x.innerHTML = "Yo!";
 };
 
 
